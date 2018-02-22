@@ -24,7 +24,7 @@
   ],
   "applications": {
     "gecko": {
-      "id": "{54BB9F3F-07E5-486c-9B39-C7398B99391C}",
+      "id": "keyboard-input-freeze-counter@clear-code.com",
       "strict_min_version": "52.0"
     }
   }
