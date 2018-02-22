@@ -5,12 +5,11 @@
   "author": "ClearCode Inc.",
   "description": "Counts freeze from keyboard inputs",
   "permissions": [
-    "<all_urls>",
-    "tabs"
+    "<all_urls>"
   ],
   "background": {
     "scripts": [
-      "backgroundjs"
+      "background.js"
     ]
   },
   "content_scripts": [
