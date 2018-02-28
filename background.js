@@ -11,13 +11,13 @@ browser.runtime.onMessage.addListener((aMessage, aSender) => {
   switch (aMessage.type) {
     case 'increment':
       const counter = counters[aMessage.eventType] || { success: 0, fail: 0 };
-  if (aMessage.success)
-    counter.success++;
-  else
-    counter.fail++;
+      if (aMessage.success)
+        counter.success++;
+      else
+        counter.fail++;
       counters[aMessage.eventType] = counter;
 
-  const total = counter.success + counter.fail;
+      const total = counter.success + counter.fail;
       console.log(`${aMessage.eventType}: ${counter.fail} / ${total} (${counter.fail / total * 100}%)`);
       break;
 
