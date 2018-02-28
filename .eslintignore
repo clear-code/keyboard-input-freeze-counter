@@ -2,6 +2,7 @@
 common/Configs.js
 options/l10n.js
 options/Options.js
+extlib
 
 # include as a lint target.
 !.eslintrc.js
