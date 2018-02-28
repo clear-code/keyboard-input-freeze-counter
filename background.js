@@ -12,7 +12,8 @@ function formatCountFor(aEventType) {
   if (!counter)
     return 'no count';
   const total = counter.success + counter.fail;
-  return `${counter.fail} / ${total} (${counter.fail / total * 100}%)`;
+  const percentage = (counter.fail / total * 100).toFixed(3).toString(10).replace(/\.([0-9]+?)0+$/, '.$1').replace(/\.0+$/, '');
+  return `${counter.fail} / ${total} (${percentage}%)`;
 }
 
 function getTimestamp() {
