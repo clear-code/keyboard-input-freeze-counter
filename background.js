@@ -12,7 +12,7 @@ function formatCountFor(aEventType) {
   if (!counter)
     return 'no count';
   const total = counter.success + counter.fail;
-  const percentage = (counter.fail / total * 100).toFixed(3).toString(10).replace(/\.([0-9]+?)0+$/, '.$1').replace(/\.0+$/, '');
+  const percentage = (counter.fail / total * 100).toFixed(2).toString(10).replace(/\.([0-9]+?)0+$/, '.$1').replace(/\.0+$/, '');
   return `${counter.fail} / ${total} (${percentage}%)`;
 }
 
