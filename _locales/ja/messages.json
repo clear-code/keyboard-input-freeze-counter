@@ -1,6 +1,6 @@
 {
   "extensionName": { "message": "Keyboard Input Freeze Counter" },
-  "extensionDescription": { "message": "Counts freeze from keyboard inputs" },
+  "extensionDescription": { "message": "キーボード入力に起因するフリーズの回数を数えます" },
 
   "optionsResetCount": { "message": "カウントをリセット" }
 }

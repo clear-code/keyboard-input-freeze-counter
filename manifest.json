@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "Keyboard Input Freeze Counter",
+  "name": "__MSG_extensionName__",
   "version": "0.1",
   "author": "ClearCode Inc.",
-  "description": "Counts freeze from keyboard inputs",
+  "description": "__MSG_extensionDescription__",
   "permissions": [
     "<all_urls>"
   ],
