@@ -18,12 +18,12 @@ function formatCountFor(aEventType) {
 function getTimestamp() {
   const now = new Date();
   return `${now.getFullYear()
-        }-${('0'+now.getMonth()).substr(-2)
-        }-${('0'+now.getDate()).substr(-2)
-        } ${('0'+now.getHours()).substr(-2)
-        }:${('0'+now.getMinutes()).substr(-2)
-        }:${('0'+now.getSeconds()).substr(-2)
-        }.${('00'+now.getMilliseconds()).substr(-3)}`;
+  }-${('0'+now.getMonth()).substr(-2)
+  }-${('0'+now.getDate()).substr(-2)
+  } ${('0'+now.getHours()).substr(-2)
+  }:${('0'+now.getMinutes()).substr(-2)
+  }:${('0'+now.getSeconds()).substr(-2)
+  }.${('00'+now.getMilliseconds()).substr(-3)}`;
 }
 
 function notifyStatus() {
