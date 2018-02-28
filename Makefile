@@ -18,7 +18,7 @@ xpi: lint extlib/webextensions-lib-l10n/l10n.js
 	rm -f ./*.xpi
 	git submodule update
 	cp extlib/webextensions-lib-l10n/l10n.js options/
-	zip -r -0 keyboard-input-freeze-counter.xpi manifest.json content.js background.js options >/dev/null 2>/dev/null
+	zip -r -0 keyboard-input-freeze-counter.xpi manifest.json content.js background.js options _locales >/dev/null 2>/dev/null
 
 extlib/webextensions-lib-l10n/l10n.js:
 	git submodule update --init
