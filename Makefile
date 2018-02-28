@@ -14,7 +14,7 @@ lint:
 format:
 	$(NPM_BIN_DIR)/eslint . --ext=.js –report-unused-disable-directives --fix
 
-xpi: extlib/webextensions-lib-l10n/l10n.js
+xpi: lint extlib/webextensions-lib-l10n/l10n.js
 	rm -f ./*.xpi
 	git submodule update
 	cp extlib/webextensions-lib-l10n/l10n.js options/
