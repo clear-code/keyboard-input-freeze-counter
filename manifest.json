@@ -26,6 +26,7 @@
     "page": "options/options.html",
     "browser_style": true
   },
+  "default_locale": "en",
   "applications": {
     "gecko": {
       "id": "keyboard-input-freeze-counter@clear-code.com",
