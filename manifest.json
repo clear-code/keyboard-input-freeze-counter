@@ -5,7 +5,8 @@
   "author": "ClearCode Inc.",
   "description": "__MSG_extensionDescription__",
   "permissions": [
-    "<all_urls>"
+    "<all_urls>",
+    "storage"
   ],
   "background": {
     "scripts": [
@@ -18,7 +19,8 @@
       "all_frames": true,
       "run_at": "document_start",
       "js": [
-        "common.js",
+        "common/Configs.js",
+        "common/common.js",
         "content.js"
       ]
     }
