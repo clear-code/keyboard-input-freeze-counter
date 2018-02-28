@@ -9,6 +9,14 @@ function resetCount() {
   browser.runtime.sendMessage({ type: 'reset' });
 }
 
+browser.runtime.onMessage.addListener((aMessage, aSender) => {
+  switch (aMessage.type) {
+    case 'status':
+      document.getElementById('status').textContent = aMessage.status;
+      break;
+  }
+});
+
 window.addEventListener('DOMContentLoaded', () => {
   const resetCountButton = document.getElementById('resetCount');
   resetCountButton.addEventListener('keypress', aEvent => {
@@ -19,5 +27,6 @@ window.addEventListener('DOMContentLoaded', () => {
     if (aEvent.button == 0)
       resetCount();
   });
+  browser.runtime.sendMessage({ type: 'requestStatus' });
 }, { once: true });
 

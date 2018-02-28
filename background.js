@@ -7,6 +7,21 @@
 
 let counters = {};
 
+function formatCountFor(aEventType) {
+  const counter = counters[aEventType];
+  if (!counter)
+    return 'no count';
+  const total = counter.success + counter.fail;
+  return `${counter.fail} / ${total} (${counter.fail / total * 100}%)`;
+}
+
+function notifyStatus() {
+  browser.runtime.sendMessage({
+    type: 'status',
+    status: Object.keys(counters).map(aEventType => `${aEventType}: ${formatCountFor(aEventType)}`).join('\n')
+  });
+}
+
 browser.runtime.onMessage.addListener((aMessage, aSender) => {
   switch (aMessage.type) {
     case 'increment':
@@ -17,8 +32,12 @@ browser.runtime.onMessage.addListener((aMessage, aSender) => {
         counter.fail++;
       counters[aMessage.eventType] = counter;
 
-      const total = counter.success + counter.fail;
-      console.log(`${aMessage.eventType}: ${counter.fail} / ${total} (${counter.fail / total * 100}%)`);
+      console.log(`${aMessage.eventType}: ${formatCountFor(aMessage.eventType)}`);
+      notifyStatus();
+      break;
+
+    case 'requestStatus':
+      notifyStatus();
       break;
 
     case 'reset':
