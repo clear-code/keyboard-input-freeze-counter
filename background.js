@@ -8,13 +8,21 @@
 const counters = {};
 
 browser.runtime.onMessage.addListener((aMessage, aSender) => {
-  const counter = counters[aMessage.type] || { success: 0, fail: 0 };
+  switch (aMessage.type) {
+    case 'increment':
+      const counter = counters[aMessage.eventType] || { success: 0, fail: 0 };
   if (aMessage.success)
     counter.success++;
   else
     counter.fail++;
-  counters[aMessage.type] = counter;
+      counters[aMessage.eventType] = counter;
 
   const total = counter.success + counter.fail;
-  console.log(`${aMessage.type}: ${counter.fail} / ${total} (${counter.fail / total * 100}%)`);
+      console.log(`${aMessage.eventType}: ${counter.fail} / ${total} (${counter.fail / total * 100}%)`);
+      break;
+
+    case 'reset':
+      counters = {};
+      break;
+  }
 });

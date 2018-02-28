@@ -1,4 +1,5 @@
 *.xpi
+**/l10n.js
 
 # node.js dependency
 node_modules/

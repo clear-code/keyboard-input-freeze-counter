@@ -9,10 +9,14 @@ const DELAY_MSEC = 100;
 const TIMEOUT_MSEC = 5000;
 
 function checkTimeout(aEvent) {
+  if (!aEvent.target.closest('input, textarea, [contenteditable="true"]'))
+    return;
+
   const startAt = Date.now();
   setTimeout(() => {
     browser.runtime.sendMessage({
-      type:    aEvent.type,
+      type:      'increment',
+      eventType: aEvent.type,
       success: Date.now() - startAt < TIMEOUT_MSEC
     });
   }, DELAY_MSEC);

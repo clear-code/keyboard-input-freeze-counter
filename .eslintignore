@@ -1,4 +1,5 @@
 # from external
+options/l10n.js
 
 # include as a lint target.
 !.eslintrc.js

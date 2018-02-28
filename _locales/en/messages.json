@@ -1,0 +1,6 @@
+{
+  "extensionName": { "message": "Keyboard Input Freeze Counter" },
+  "extensionDescription": { "message": "Counts freeze from keyboard inputs" },
+
+  "optionsResetCount": { "message": "Reset count" }
+}

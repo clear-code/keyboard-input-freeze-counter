@@ -22,6 +22,10 @@
       ]
     }
   ],
+  "options_ui": {
+    "page": "options/options.html",
+    "browser_style": true
+  },
   "applications": {
     "gecko": {
       "id": "keyboard-input-freeze-counter@clear-code.com",
