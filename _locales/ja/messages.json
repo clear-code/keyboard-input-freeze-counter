@@ -2,5 +2,7 @@
   "extensionName": { "message": "Keyboard Input Freeze Counter" },
   "extensionDescription": { "message": "キーボード入力に起因するフリーズの回数を数えます" },
 
+  "options_freezeDetectionThresholdSeconds_before": { "message": "操作に" },
+  "options_freezeDetectionThresholdSeconds_after": { "message": "秒以上を要したらフリーズしたと見なす" },
   "optionsResetCount": { "message": "カウントをリセット" }
 }

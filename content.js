@@ -6,7 +6,6 @@
 'use strict';
 
 const DELAY_MSEC = 100;
-const TIMEOUT_MSEC = 5000;
 
 function checkTimeout(aEvent) {
   if (!aEvent.target.closest('input, textarea, [contenteditable="true"]'))
@@ -17,7 +16,7 @@ function checkTimeout(aEvent) {
     browser.runtime.sendMessage({
       type:      'increment',
       eventType: aEvent.type,
-      success: Date.now() - startAt < TIMEOUT_MSEC
+      success: Date.now() - startAt < configs.freezeDetectionThresholdSeconds * 1000
     });
   }, DELAY_MSEC);
 }

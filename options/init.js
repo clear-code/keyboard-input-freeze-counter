@@ -17,6 +17,7 @@ browser.runtime.onMessage.addListener((aMessage, aSender) => {
   }
 });
 
+var options = new Options(configs);
 window.addEventListener('DOMContentLoaded', () => {
   const resetCountButton = document.getElementById('resetCount');
   resetCountButton.addEventListener('keypress', aEvent => {
