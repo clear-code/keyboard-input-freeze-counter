@@ -42,6 +42,7 @@ browser.runtime.onMessage.addListener((aMessage, aSender) => {
 
     case 'reset':
       counters = {};
+      notifyStatus();
       break;
   }
 });
