@@ -16,6 +16,8 @@ function checkTimeout(aEvent) {
     browser.runtime.sendMessage({
       type:      'increment',
       eventType: aEvent.type,
+      key:       aEvent.key || null,
+      code:      aEvent.code || null,
       success: Date.now() - startAt < configs.freezeDetectionThresholdSeconds * 1000
     });
   }, DELAY_MSEC);

@@ -43,7 +43,8 @@ browser.runtime.onMessage.addListener((aMessage, aSender) => {
         counter.fail++;
       counters[aMessage.eventType] = counter;
 
-      console.log(`${getTimestamp()}: ${aMessage.eventType}: ${formatCountFor(aMessage.eventType)}`);
+      const keyPart = aMessage.key ? `(${aMessage.key})` : '';
+      console.log(`${getTimestamp()}: ${aMessage.eventType}${keyPart}: ${formatCountFor(aMessage.eventType)}`);
       notifyStatus();
       break;
 
