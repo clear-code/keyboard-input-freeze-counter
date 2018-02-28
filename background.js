@@ -5,7 +5,7 @@
 */
 'use strict';
 
-const counters = {};
+let counters = {};
 
 browser.runtime.onMessage.addListener((aMessage, aSender) => {
   switch (aMessage.type) {
