@@ -15,6 +15,17 @@ function formatCountFor(aEventType) {
   return `${counter.fail} / ${total} (${counter.fail / total * 100}%)`;
 }
 
+function getTimestamp() {
+  const now = new Date();
+  return `${now.getFullYear()
+        }-${('0'+now.getMonth()).substr(-2)
+        }-${('0'+now.getDate()).substr(-2)
+        } ${('0'+now.getHours()).substr(-2)
+        }:${('0'+now.getMinutes()).substr(-2)
+        }:${('0'+now.getSeconds()).substr(-2)
+        }.${('00'+now.getMilliseconds()).substr(-3)}`;
+}
+
 function notifyStatus() {
   browser.runtime.sendMessage({
     type: 'status',
@@ -32,7 +43,7 @@ browser.runtime.onMessage.addListener((aMessage, aSender) => {
         counter.fail++;
       counters[aMessage.eventType] = counter;
 
-      console.log(`${aMessage.eventType}: ${formatCountFor(aMessage.eventType)}`);
+      console.log(`${getTimestamp()}: ${aMessage.eventType}: ${formatCountFor(aMessage.eventType)}`);
       notifyStatus();
       break;
 
